@@ -134,6 +134,43 @@
     .skill-level { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem; }
     .skill-bar { height: 3px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
     .skill-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    /* PROJECTS */
+    .projects-section { padding: 5rem 2rem; }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem; position: relative;
+      overflow: hidden; transition: transform 0.2s, border-color 0.2s;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+    .project-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .project-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;
+    }
+    .project-title { font-size: 1.4rem; font-weight: 700; }
+    .project-status {
+      font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #2ecc71;
+      border: 1px solid #2ecc71; border-radius: 999px; padding: 0.25rem 0.75rem;
+      letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;
+    }
+    .project-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .project-tag {
+      font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--accent2);
+      border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.6rem;
+    }
+    .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .project-link {
+      font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem;
+      color: var(--text); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.6rem 1rem; transition: border-color 0.2s, opacity 0.2s;
+    }
+    .project-link:hover { border-color: var(--accent); }
+    .project-link.primary { background: var(--accent); border-color: var(--accent); }
+    .project-link.primary:hover { opacity: 0.88; }
 
     /* CONTACT */
     .contact-section { padding: 5rem 2rem 6rem; }
@@ -193,9 +230,9 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">arfath.dev</div>
     <div class="nav-links">
       <a href="#about">about</a>
+      <a href="#projects">projects</a>
       <a href="#skills">skills</a>
       <a href="#contact">contact</a>
     </div>
@@ -319,7 +356,38 @@
         <div class="skill-bar"><div class="skill-fill" style="width: 45%"></div></div>
       </div>
     </div>
+    
   </section>
+  <!-- PROJECTS -->
+  <section class="projects-section" id="projects">
+    <div class="section-eyebrow">What I've built</div>
+    <div class="section-title">Featured project</div>
+    <div class="section-sub">A real, deployed product — not a tutorial clone.</div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-title">Mathesis</div>
+        <div class="project-status">🟢 Live</div>
+      </div>
+      <p class="project-desc">
+        An AI-powered study platform. Upload a photo or PDF of your notes and Mathesis turns it into practice quizzes, spaced-repetition flashcards, and downloadable study guides — plus a chat assistant that only knows what you uploaded, not the whole internet. Built end-to-end: authentication, database design with row-level security, two different AI providers, a working ₹19/month subscription flow, and a 3D animated landing page.
+      </p>
+      <div class="project-tags">
+        <span class="project-tag">Next.js</span>
+        <span class="project-tag">TypeScript</span>
+        <span class="project-tag">Supabase</span>
+        <span class="project-tag">NVIDIA NIM</span>
+        <span class="project-tag">Razorpay</span>
+        <span class="project-tag">React Three Fiber</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link primary" href="https://mathesis-seven.vercel.app" target="_blank">Live demo ↗</a>
+      </div>
+    </div>
+  </section>
+
+  
+  
 
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
